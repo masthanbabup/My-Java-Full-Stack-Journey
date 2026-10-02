@@ -1,4 +1,4 @@
-class Solution {
+/*class Solution {
     public int thirdMax(int[] nums) {
         if(nums.length==1) return nums[0];
         if(nums.length==2) return Math.max(nums[0],nums[1]);
@@ -20,7 +20,7 @@ class Solution {
                 res=i;
             }
          }return nums[res];*/
-            int res=0;
+           /* int res=0;
          int l=nums.length;
          Arrays.sort(nums);
          int p1=l-1;
@@ -42,5 +42,39 @@ class Solution {
 
 
         
+    }
+}*/
+class Solution {
+    public int thirdMax(int[] nums) {
+
+        long first = Long.MIN_VALUE;
+        long second = Long.MIN_VALUE;
+        long third = Long.MIN_VALUE;
+
+        for (int num : nums) {
+
+            if (num == first || num == second || num == third) {
+                continue;
+            }
+
+            if (num > first) {
+                third = second;
+                second = first;
+                first = num;
+            }
+            else if (num > second) {
+                third = second;
+                second = num;
+            }
+            else if (num > third) {
+                third = num;
+            }
+        }
+
+        if (third == Long.MIN_VALUE) {
+            return (int) first;
+        }
+
+        return (int) third;
     }
 }
