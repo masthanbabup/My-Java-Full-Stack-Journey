@@ -5,8 +5,7 @@ class Solution {
         int s=x;
         while(x>0){
             
-            sum*=10;
-            sum+=x%10;
+            sum = sum*10+x%10;
             x/=10;
         }
         return sum==s;
