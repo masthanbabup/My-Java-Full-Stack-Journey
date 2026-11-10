@@ -8,7 +8,7 @@ class Solution {
             sum*=10;
             sum+=x%10;
             x/=10;
-        }System.out.println(sum);
+        }
         return sum==s;
     }
 }
