@@ -2,13 +2,13 @@ class Solution {
     public int maxProduct(int[] nums) {
         int temp=0;
          int temp2=0;
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]>temp){
+        for(int i :nums){
+            if(i>temp){
                 temp2=temp;
-                temp=nums[i];
+                temp=i;
 
-            }else if(nums[i]>temp2){
-                temp2=nums[i];
+            }else if(i>temp2){
+                temp2=i;
             }
         }
         
