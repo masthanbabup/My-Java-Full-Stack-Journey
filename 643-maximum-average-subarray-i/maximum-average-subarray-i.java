@@ -8,7 +8,9 @@ class Solution {
          int res=csum;
          for(int i=k;i<nums.length;i++){
             csum+=nums[i]-nums[i-k];
-            res=Math.max(res,csum);
+            if(csum>res){
+                res=csum;
+            }
          }
          return (double)res/k;
     }
