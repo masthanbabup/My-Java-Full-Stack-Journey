@@ -2,7 +2,7 @@ class Solution {
     public int numOfSubarrays(int[] arr, int k, int t) {
         int csum=0;
         int res=0;
-        int gsum=0;
+
         for(int i=0;i<k;i++){
             csum+=arr[i];
             
